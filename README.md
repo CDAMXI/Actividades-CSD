@@ -37,6 +37,8 @@ Actividades-CSD/
   4. Push a la Rama (git push origin feature/nueva-actividad).
   5. Abre un Pull Request en GitHub.
 
+**NOTA:** por favor pon tu nombre de usuario para que te lleves el reconocimiento que te mereces.
+
 Por favor, asegúrate de que tu código sigue las convenciones y estándares establecidos en el repositorio.
 
 Gracias por visitar este repositorio! Espero que encuentres útiles las actividades y ejercicios aquí presentes.
