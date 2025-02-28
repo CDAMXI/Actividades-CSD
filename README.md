@@ -28,7 +28,7 @@ Actividades-CSD/
   
 3. **Ejecutar el Código**: Dentro de cada carpeta de actividad, encontrarás un directorio src/ que contiene el código fuente. Sigue las instrucciones en el README.md de cada actividad para ejecutar el código.
 
-##Contribuciones
+## Contribuciones
 ¡Las contribuciones son bienvenidas! Si deseas contribuir a este repositorio, por favor sigue los siguientes pasos:
 
   1. Haz un Fork del repositorio.
