@@ -1,4 +1,4 @@
-package Tema1_Act6;
+ 
 
 public class SimpleThreads {
 
