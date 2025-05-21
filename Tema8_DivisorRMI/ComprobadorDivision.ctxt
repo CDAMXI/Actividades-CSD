@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=ComprobadorDivision
+comment1.params=a\ b\ r
+comment1.target=boolean\ comprobar(int,\ int,\ Resultado)
+numComments=2

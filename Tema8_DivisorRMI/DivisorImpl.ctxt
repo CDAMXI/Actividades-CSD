@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=DivisorImpl
+comment1.params=
+comment1.target=DivisorImpl()
+comment2.params=restador\ dividendo\ divisor
+comment2.target=Resultado\ dividir(Restador,\ int,\ int)
+numComments=3
