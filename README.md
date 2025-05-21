@@ -1,6 +1,6 @@
 # Actividades-CSD
 
-Este repositorio contiene actividades y ejercicios relacionados con la asignatura de **Conocimiento del Software y Desarrollo** (CSD). Aquí encontrarás diferentes proyectos, ejercicios y ejemplos que cubren diversos temas de la asignatura.
+Este repositorio contiene actividades y ejercicios relacionados con la asignatura de **Concurrencias y Sistemas Distribuidos** (CSD). Aquí encontrarás diferentes proyectos, ejercicios y ejemplos que cubren diversos temas de la asignatura.
 
 ## Estructura del Repositorio
 
