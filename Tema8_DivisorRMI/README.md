@@ -1,50 +1,47 @@
-# 📌 Repositorio de Prácticas de JAVA - CSD (Concurrencia y Sistemas Distribuidos)  
+# README - Sistema de División y Resta Remota con RMI
 
-Este repositorio contiene todas las prácticas de JAVA relacionadas con la asignatura de **Concurrencia y Sistemas Distribuidos (CSD)**. A medida que se vayan desarrollando nuevas prácticas, se irán subiendo aquí para su consulta y uso.  
+## 📌 Descripción
+Sistema distribuido que realiza divisiones mediante restas sucesivas usando Java RMI. Incluye:
+- Servidor de operaciones de resta (`Restador`)
+- Servidor de división por restas (`Divisor`)
+- Cliente de prueba
 
-🔗 **Repositorio:** [Practs_CSD](https://github.com/CDAMXI/Practs_CSD.git)  
+## 🛠️ Requisitos
+- Java JDK 8+
+- Terminal/bash
 
-## 📂 Prácticas Incluidas
-- ✅ **Práctica 1:** Piscina  (2 sesiones)
-- ✅ **Práctica 2:** Problema de los 5 filósofos (1 sesión)
-- ✅ **Práctica 3:** Hormigas / Interbloqueo ()
+## 🚀 Instalación y Ejecución
 
-## 🚀 Guía Rápida para Ejecutar los Proyectos  
-
-### 1️⃣ Clonar el repositorio  
+1. **Compilar todo el proyecto**:
 ```bash
-git clone https://github.com/CDAMXI/Practs_CSD.git
-cd Practs_CSD
+javac *.java
 ```
-### 2️⃣Compilar los archivos Java
+2. **Iniciar RMI Registry** (en puerto 1099):
 ```bash
-javac NombreDelArchivo.java
+rmiregistry 1099 &
 ```
-### 3️⃣ Ejecutar el programa
+3. **Ejecutar servidores** (en terminales separadas):
 ```bash
-java NombreDelArchivo
+# Servidor de Restas
+java ServidorRestador localhost 1099
+
+# Servidor de Divisiones
+java ServidorDivision localhost 1099
 ```
-### 4️⃣ Usar un IDE (Distinto a BlueJ)
-Si usas un IDE como IntelliJ IDEA o Eclipse:
-- Importa el proyecto como un proyecto Java.
-- Asegúrate de que la configuración del SDK de Java esté correctamente establecida.
-- Ejecuta las clases con main() directamente desde el IDE.
+4. **Ejecutar Cliente:**
+```bash
+java Cliente localhost 1099
+```
+## 🏗️ Estructura del Código
+**🔗 Interfaces remotas**
+```bash
+// Restador.java
+public interface Restador extends Remote {
+    Integer restar(int a, int b) throws RemoteException;
+}
 
-### 🖥️ Usar BlueJ (Opcional)
-Si prefieres usar **BlueJ** para ejecutar las prácticas, sigue estos pasos:
-1. Crear un nuevo proyecto en BlueJ.
-2. Copiar y pegar el código de los archivos .java del repositorio en las clases correspondientes que crees en BlueJ.
-3. Compilar el código:
-- Haz clic derecho sobre la clase y selecciona Compilar.
-- O usa el atajo de teclado:
-    - **Windows/Linux:** Ctrl + K
-    - **macOS:** Cmd + K
-
-4. Ejecutar el programa:
-5. Haz clic derecho sobre la clase y selecciona void main(args).
-6. O usa el atajo de teclado:
-    - **Windows/Linux:** Ctrl + R
-    - **macOS:** Cmd + R
-
-📌 **Nota:** 
-- Si alguna práctica requiere configuración adicional, se incluirán instrucciones específicas en su respectivo directorio.
+// Divisor.java
+public interface Divisor extends Remote {
+    Resultado dividir(Restador r, int a, int b) throws RemoteException;
+}
+```
