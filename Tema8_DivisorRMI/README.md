@@ -8,20 +8,20 @@ Sistema distribuido que realiza divisiones mediante restas sucesivas usando Java
 
 ## 🛠️ Requisitos
 - Java JDK 8+
-- Terminal/
+- Terminal/bash
 
 ## 🚀 Instalación y Ejecución
 
 1. **Compilar todo el proyecto**:
-```
+```bash
 javac *.java
 ```
 2. **Iniciar RMI Registry** (en puerto 1099):
-```
+```bash
 rmiregistry 1099 &
 ```
 3. **Ejecutar servidores** (en terminales separadas):
-```
+```bash
 # Servidor de Restas
 java ServidorRestador localhost 1099
 
@@ -29,12 +29,12 @@ java ServidorRestador localhost 1099
 java ServidorDivision localhost 1099
 ```
 4. **Ejecutar Cliente:**
-```
+```bash
 java Cliente localhost 1099
 ```
 ## 🏗️ Estructura del Código
 **🔗 Interfaces remotas**
-```
+```bash
 // Restador.java
 public interface Restador extends Remote {
     Integer restar(int a, int b) throws RemoteException;
@@ -45,9 +45,8 @@ public interface Divisor extends Remote {
     Resultado dividir(Restador r, int a, int b) throws RemoteException;
 }
 ```
-
 **💻 Implementaciones**
-```
+```bash
 // RestadorImpl.java
 public class RestadorImpl extends UnicastRemoteObject implements Restador {
     public Integer restar(int a, int b) throws RemoteException {
@@ -74,9 +73,8 @@ public class DivisorImpl extends UnicastRemoteObject implements Divisor {
     }
 }
 ```
-
 **📦 Clases de soporte**
-```
+```bash
 // Resultado.java
 public class Resultado implements Serializable {
     int cociente = 0;
@@ -97,7 +95,7 @@ public class ComprobadorDivisionImpl implements ComprobadorDivision {
 }
 ```
 ## 📊 Salida esperada
-```
+```bash
 ✅ ServidorRestador: "Restador preparado"
 ✅ ServidorDivision: "Divisor preparado"
 ✅ Cliente: "división correcta"
@@ -107,5 +105,3 @@ public class ComprobadorDivisionImpl implements ComprobadorDivision {
 1. Los servidores deben mantenerse en ejecución
 2. Usar el mismo puerto en todos los componentes
 3. Se requieren 3 terminales: 1 para RMI Registry, 1 para cada servidor
-
-
